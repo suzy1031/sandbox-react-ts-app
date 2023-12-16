@@ -42,6 +42,12 @@ export default {
 - ref
   - [PR-Agent を使って Pull Request を AI レビューしてみた。（日本語対応もしてみた）](https://tech.layerx.co.jp/entry/2023/09/01/102612)
 
+### prepare
+
+- OpenAI に課金が必要
+- 10 ドルを credit しておく
+- api key をコピー
+
 ```
 // github
 open target repository
