@@ -36,3 +36,25 @@ export default {
 - [Vitest で React のテストを書いてみる](https://zenn.dev/collabostyle/articles/15883dcd38c9ff)
 
 - [Vite は使ってないけど Jest を Vitest に移行する](https://zenn.dev/sa2knight/articles/migrating_vitest_from_jest)
+
+## PR-Agent
+
+- ref
+  - [PR-Agent を使って Pull Request を AI レビューしてみた。（日本語対応もしてみた）](https://tech.layerx.co.jp/entry/2023/09/01/102612)
+
+### prepare
+
+- OpenAI に課金が必要
+- 10 ドルを credit しておく
+- api key をコピー
+
+```
+// github
+open target repository
+select Setting and open "Secrets and variables"
+select "Actions"
+add "OPENAI_KEY" in Repository Secrets
+
+// your repository
+create .github/workflows/pr-agent.yaml
+```
