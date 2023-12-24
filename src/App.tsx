@@ -22,10 +22,18 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button id="count-up" onClick={() => setCount((count) => count + 1)}>
+        <button
+          data-qa="count-up"
+          onClick={() => setCount((count) => count + 1)}
+        >
           count is {count}
         </button>
-        <Button variant="contained" sx={{ mx: 2 }} onClick={handleOpen}>
+        <Button
+          data-qa="open-modal-button"
+          variant="contained"
+          sx={{ mx: 2 }}
+          onClick={handleOpen}
+        >
           Mui Button Test
         </Button>
         <p>
