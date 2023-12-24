@@ -30,8 +30,10 @@ const ChoiceModal: FC<Props> = ({ open, handleClose }): ReactElement => (
       </DialogContentText>
     </DialogContent>
     <DialogActions>
-      <Button onClick={handleClose}>Disagree</Button>
-      <Button onClick={handleClose} autoFocus>
+      <Button data-qa="left-button" onClick={handleClose}>
+        Disagree
+      </Button>
+      <Button data-qa="right-button" onClick={handleClose} autoFocus>
         Agree
       </Button>
     </DialogActions>
