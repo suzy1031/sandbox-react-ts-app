@@ -58,3 +58,36 @@ add "OPENAI_KEY" in Repository Secrets
 // your repository
 create .github/workflows/pr-agent.yaml
 ```
+
+## tests
+
+```
+npm i @testing-library/react-hooks
+// -> install error
+```
+
+react 18.x 系に未対応
+
+```
+npm i @testing-library/react-hooks --legacy-peer-deps
+// -> install完了
+```
+
+```
+npm run test
+
+Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+✓ src/tests/hooks/useHandleModal.test.ts (3)
+   ✓ useHandleModal hook (3)
+     ✓ should start with modal closed
+     ✓ should open modal when handleOpen is called
+     ✓ should close modal when handleClose is called
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  09:40:58
+   Duration  55ms`
+```
+
+Warning が出るが､テストは実行されることを確認
