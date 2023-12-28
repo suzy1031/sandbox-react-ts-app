@@ -5,3 +5,7 @@ export const plus = (v1: number, v2: number) => {
 export const minus = (v1: number, v2: number) => {
   return v1 - v2;
 };
+
+export const multi = (a: number, b: number): number => {
+  return a * b;
+};
