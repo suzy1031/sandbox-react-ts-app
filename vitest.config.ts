@@ -6,7 +6,7 @@ export default defineConfig({
     include: ["src/tests/**/*.test.tsx", "src/tests/**/*.test.ts"],
     environment: "jsdom",
     coverage: {
-      reporter: ["text", "json", "html"],
+      reporter: ["text", "json-summary", "json"],
       reportsDirectory: "./coverage",
     },
     // これを有効にしないとexpect関数でエラーする
