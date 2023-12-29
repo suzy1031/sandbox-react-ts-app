@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Tooltip,
 } from "@mui/material";
 import { FC, ReactElement } from "react";
 
@@ -30,9 +31,11 @@ const ChoiceModal: FC<Props> = ({ open, handleClose }): ReactElement => (
       </DialogContentText>
     </DialogContent>
     <DialogActions>
-      <Button data-qa="left-button" onClick={handleClose}>
-        Disagree
-      </Button>
+      <Tooltip title="close" placement="top">
+        <Button data-qa="left-button" onClick={handleClose}>
+          Disagree
+        </Button>
+      </Tooltip>
       <Button data-qa="right-button" onClick={handleClose} autoFocus>
         Agree
       </Button>
