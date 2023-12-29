@@ -10,5 +10,20 @@ const theme = createTheme({
       fontWeight: 700,
     },
   },
+  components: {
+    // Name of the component
+    MuiTooltip: {
+      styleOverrides: {
+        // Name of the slot
+        tooltip: {
+          // Some CSS
+          fontSize: "13px",
+          background: "#FFFFFF",
+          color: "#444444",
+          boxShadow: "0px 0px 12px 0px rgba(0, 0, 0, 0.11)",
+        },
+      },
+    },
+  },
 });
 export default theme;
