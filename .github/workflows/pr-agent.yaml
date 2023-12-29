@@ -2,6 +2,7 @@ name: pr-agent
 
 on:
   pull_request:
+    branches: [develop]
     types: [opened, reopened, synchronize]
   issue_comment:
     types: [created, edited]
