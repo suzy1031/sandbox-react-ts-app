@@ -14,9 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
+        if: |
+          startWith(github.head_ref, 'feature')
         uses: actions/checkout@v3
 
       - name: " Use Node.js 20.10.0"
+        if: |
+          startWith(github.head_ref, 'feature')
         uses: actions/setup-node@v3
         with:
           node-version: 20.10.0
@@ -25,4 +29,6 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - run: npm run test:coverage
       - name: Vitest Coverage Report
+        if: |
+          startWith(github.head_ref, 'feature')
         uses: davelosert/vitest-coverage-report-action@v2.2.0
