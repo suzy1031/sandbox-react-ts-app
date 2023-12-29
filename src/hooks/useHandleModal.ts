@@ -6,6 +6,9 @@ type ReturnType = {
   handleClose: () => void;
 };
 
+/**
+ * モーダルの開閉を管理するカスタムフック
+ */
 const useHandleModal = (): ReturnType => {
   const [open, setOpen] = useState(false);
 
