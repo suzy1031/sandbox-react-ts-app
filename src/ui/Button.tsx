@@ -1,4 +1,6 @@
-const Button = ({
+import { Button } from "@mui/material";
+
+const CustomButton = ({
   children,
   onClick,
   disabled,
@@ -8,13 +10,14 @@ const Button = ({
   disabled?: boolean;
 }) => {
   return (
-    <button
+    <Button
+      color="primary"
+      variant="contained"
       disabled={disabled}
-      style={{ backgroundColor: "white" }}
       onClick={onClick}
     >
       {children}
-    </button>
+    </Button>
   );
 };
-export default Button;
+export default CustomButton;

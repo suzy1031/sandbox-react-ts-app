@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "../../ui/Button";
+import CustomButton from "../../ui/Button";
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof CustomButton> = {
   title: "Button",
-  component: Button,
+  component: CustomButton,
 };
 
 // eslint-disable-next-line import/no-default-export
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof CustomButton>;
 
 export const DefaultButton: Story = {
-  render: () => <Button>Button Label</Button>,
+  render: () => <CustomButton>Button Label</CustomButton>,
 };
