@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import ChoiceModal from "../ui/ChoiceModal";
-import { vi } from "vitest";
+import { vi, test, expect } from "vitest";
 
 test("renders correctly", () => {
   const handleClose = vi.fn();

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import { expect, test } from "vitest";
 import Button from "../ui/Button";
 
 test("renders correctly", () => {
