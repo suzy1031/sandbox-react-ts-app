@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "doc": "typedoc --entryPointStrategy expand ./src"
+    "doc": "typedoc --entryPointStrategy expand ./src --exclude '**/*+(.test.ts|.test.tsx)'"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
