@@ -2,19 +2,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 import CustomButton from "../../ui/Button";
 
 const meta: Meta<typeof CustomButton> = {
-  title: "CustomButton",
+  title: "ui/CustomButton",
   component: CustomButton,
 };
 
-// eslint-disable-next-line import/no-default-export
 export default meta;
 
 type Story = StoryObj<typeof CustomButton>;
 
-export const DefaultButton: Story = {
+export const Primary: Story = {
   render: () => <CustomButton>Button Label</CustomButton>,
 };
 
-export const DisabledButton: Story = {
+export const Disabled: Story = {
   render: () => <CustomButton disabled>Disabled Button Label</CustomButton>,
 };
