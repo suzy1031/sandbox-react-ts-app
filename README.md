@@ -46,6 +46,16 @@ npm run dev
 
 - [Vite は使ってないけど Jest を Vitest に移行する](https://zenn.dev/sa2knight/articles/migrating_vitest_from_jest)
 
+## TypeDoc
+
+- refs:
+  - https://typedoc.org/
+
+```
+npm run doc
+// => output docs dir
+```
+
 ## Github Actions
 
 ### packages
