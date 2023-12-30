@@ -12,7 +12,7 @@ const CustomButton = ({
   return (
     <Stack direction="row" spacing={2}>
       <Button color="secondary" variant="outlined" onClick={onClick}>
-        secondary
+        left button
       </Button>
       <Button
         color="primary"
