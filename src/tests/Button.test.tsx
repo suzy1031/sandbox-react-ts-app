@@ -1,10 +1,7 @@
-import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
-import CustomButton from "../ui/Button";
+import { render } from "@testing-library/react";
+import Button from "../ui/Button";
 
-test("Buttonに文字が表示されること", async () => {
-  render(<CustomButton>Button</CustomButton>);
-
-  expect(screen.getByText("Button")).toBeTruthy();
+test("renders correctly", () => {
+  const { asFragment } = render(<Button>Test Button</Button>);
+  expect(asFragment()).toMatchSnapshot();
 });
