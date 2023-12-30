@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "doc": "typedoc --entryPointStrategy expand ./src --exclude '**/*+(.test.ts|.test.tsx)'",
+    "doc": "typedoc --entryPointStrategy expand ./src --exclude '**/*+(.test.ts|.test.tsx|.stories.tsx)'",
     "sb:dev": "storybook dev -p 6006",
     "build-sb": "storybook build"
   },
