@@ -46,6 +46,8 @@ npm run dev
 
 - [Vite は使ってないけど Jest を Vitest に移行する](https://zenn.dev/sa2knight/articles/migrating_vitest_from_jest)
 
+- [テストフレームワークを Jest から Vitest に移管した手順と得た知見](https://qiita.com/itouoti/items/6f03065c68baf4245b2f)
+
 ## TypeDoc
 
 - refs:
