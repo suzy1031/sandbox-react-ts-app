@@ -8,6 +8,12 @@ export default defineConfig({
     coverage: {
       reporter: ["text", "json-summary", "json"],
       reportsDirectory: "./coverage",
+      thresholds: {
+        lines: 60,
+        branches: 60,
+        functions: 60,
+        statements: 60,
+      },
     },
     // これを有効にしないとexpect関数でエラーする
     // ReferenceError: expect is not defined
