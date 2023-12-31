@@ -5,6 +5,7 @@ import "./App.css";
 import { Button } from "@mui/material";
 import useHandleModal from "./hooks/useHandleModal";
 import ChoiceModal from "./ui/ChoiceModal";
+import HtmlButton from "./ui/HtmlButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,6 +37,11 @@ function App() {
         >
           Mui Button Test
         </Button>
+        <HtmlButton
+          label="jsdoc -> copilot生成"
+          variant="outlined"
+          handleClick={() => console.log("click")}
+        />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
