@@ -1,9 +1,40 @@
 import { createTheme } from "@mui/material";
+import { colors } from "../constants/colors";
 
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: colors.primary,
+      contrastText: colors.white,
+    },
+    secondary: {
+      main: colors.secondary,
+    },
+    error: {
+      main: colors.error,
+    },
+    mycolor1: {
+      main: colors.yellow,
+    },
+    mycolor2: {
+      main: colors.purple,
+    },
+  },
   typography: {
     fontSize: 13,
-    fontFamily: `'Noto Sans JP', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif`,
+    fontFamily: [
+      "Noto Sans JP",
+      "Yu Gothic",
+      "YuGothic",
+      "ヒラギノ角ゴ Pro W3",
+      "Hiragino Kaku Gothic Pro",
+      "メイリオ",
+      "Meiryo",
+      "Osaka",
+      "ＭＳ Ｐゴシック",
+      "MS PGothic",
+      "sans-serif",
+    ].join(","),
     button: {
       fontSize: 14,
       textTransform: "none",
