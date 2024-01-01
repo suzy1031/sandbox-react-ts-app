@@ -38,6 +38,7 @@ function App() {
           Mui Button Test
         </Button>
         <HtmlButton
+          color="mycolor2"
           label="jsdoc -> copilot生成"
           variant="outlined"
           handleClick={() => console.log("click")}
