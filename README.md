@@ -46,6 +46,8 @@ npm run dev
 
 - [Vite は使ってないけど Jest を Vitest に移行する](https://zenn.dev/sa2knight/articles/migrating_vitest_from_jest)
 
+- [テストフレームワークを Jest から Vitest に移管した手順と得た知見](https://qiita.com/itouoti/items/6f03065c68baf4245b2f)
+
 ## TypeDoc
 
 - refs:
@@ -54,6 +56,26 @@ npm run dev
 ```
 npm run doc
 // => output docs dir
+```
+
+## Storybook
+
+- Component を追加したとき､`/stories`配下に`*.stories.tsx`ファイルを作成し､`Story`` をつくる
+
+```
+npm run sb:dev
+```
+
+## Snapshot test by @testing-library/react
+
+- 意図しない変更･デグレを検知する
+- github actions で CI が失敗した場合､該当の\*.test.tsx ファイルで snapshot の差分を確認
+- 変更が意図した通りであれば､update する
+- `__snapshots__`配下の該当する`*.test.tsx.snap`が更新を確認後､commit する
+
+```
+npm run test
+// press u
 ```
 
 ## Github Actions

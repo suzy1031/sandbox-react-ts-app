@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   test: {
     include: ["src/tests/**/*.test.tsx", "src/tests/**/*.test.ts"],
-    environment: "jsdom",
+    environment: "happy-dom",
     coverage: {
       reporter: ["text", "json-summary", "json"],
       reportsDirectory: "./coverage",

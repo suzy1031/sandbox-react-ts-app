@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 
 const CustomButton = ({
   children,
@@ -10,14 +10,19 @@ const CustomButton = ({
   disabled?: boolean;
 }) => {
   return (
-    <Button
-      color="primary"
-      variant="contained"
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {children}
-    </Button>
+    <Stack direction="row" spacing={2}>
+      <Button color="secondary" variant="outlined" onClick={onClick}>
+        left button
+      </Button>
+      <Button
+        color="primary"
+        variant="contained"
+        disabled={disabled}
+        onClick={onClick}
+      >
+        {children}
+      </Button>
+    </Stack>
   );
 };
 export default CustomButton;
