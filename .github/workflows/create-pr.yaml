@@ -1,6 +1,12 @@
+name: create-pr
+
 on:
   push:
     branches: [staging]
+
+permissions:
+  pull-requests: write
+  issues: write
 
 jobs:
   create-release-pr:
