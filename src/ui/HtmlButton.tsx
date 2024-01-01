@@ -3,7 +3,7 @@
  * @description material ui(@mui/material)のButtonコンポーネントをラップしたコンポーネント
  * @param {string} label - ボタンラベル
  * @param {'contained' | 'outlined' | 'text'} variant - optional default: 'contained' ボタンの種類
- * @param {'primary' | 'secondary'} color - optional default: 'primary' ボタンの色
+ * @param {'primary' | 'secondary' | 'error' | 'mycolor1' | 'mycolor2'} color - optional default: 'primary' ボタンの色
  * @param {function} handleClick - ボタンクリック時のコールバック
  * @param {string} dataQa - optional default: '' テスト用のカスタムデータ属性
  * @param {number} height - optional default: 48 ボタンの高さ
@@ -27,7 +27,7 @@ import { Button, SxProps } from "@mui/material";
 const HtmlButton: React.FC<{
   label: string;
   variant?: "contained" | "outlined" | "text";
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "error" | "mycolor1" | "mycolor2";
   handleClick: () => void;
   dataQa?: string;
   height?: number;
@@ -49,7 +49,11 @@ const HtmlButton: React.FC<{
       color={color}
       onClick={handleClick}
       data-qa={dataQa}
-      sx={{ height, borderRadius: isRounded ? "24px" : "4px", ...sx }}
+      sx={{
+        height,
+        borderRadius: isRounded ? "24px" : "4px",
+        ...sx,
+      }}
     >
       {label}
     </Button>
