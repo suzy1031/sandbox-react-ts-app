@@ -48,6 +48,10 @@ npm run dev
 
 - [テストフレームワークを Jest から Vitest に移管した手順と得た知見](https://qiita.com/itouoti/items/6f03065c68baf4245b2f)
 
+- [Storybook 7 を Vue 3 + TypeScript ではじめよう！](https://zenn.dev/sa2knight/books/storybook-7-with-vue-3)
+
+- [Build your own Storybook GPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
+
 ## TypeDoc
 
 - refs:
