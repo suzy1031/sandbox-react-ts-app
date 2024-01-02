@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import useHandleModal from "./hooks/useHandleModal";
 import ChoiceModal from "./ui/ChoiceModal";
 import HtmlButton from "./ui/HtmlButton";
+import Headline from "./ui/Headline";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +22,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <Headline title="Vite + React" variant="xl" />
       <div className="card">
         <button
           data-qa="count-up"
