@@ -20,6 +20,7 @@ export const PrimaryContained: Story = {
     sx: { width: "300px", fontSize: "16px" },
   },
   render: (args) => <HtmlButton {...args} />,
+  tags: ["autodocs"],
 };
 
 export const SecondaryOutlined: Story = {
@@ -33,4 +34,5 @@ export const SecondaryOutlined: Story = {
     sx: { width: "200px", fontSize: "14px" },
   },
   render: (args) => <HtmlButton {...args} />,
+  tags: ["autodocs"],
 };
