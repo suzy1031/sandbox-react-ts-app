@@ -52,16 +52,6 @@ npm run dev
 
 - [Build your own Storybook GPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
 
-## TypeDoc
-
-- refs:
-  - https://typedoc.org/
-
-```
-npm run doc
-// => output docs dir
-```
-
 ## Storybook
 
 - Component を追加したとき､`/stories`配下に`*.stories.tsx`ファイルを作成し､`Story`` をつくる
