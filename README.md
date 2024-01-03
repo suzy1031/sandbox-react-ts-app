@@ -52,7 +52,7 @@ npm run dev
 
 - [Build your own Storybook GPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
 
--[@storybook-test: more streamlined and powerful testing](https://storybook.js.org/blog/storybook-test/)
+- [@storybook-test: more streamlined and powerful testing](https://storybook.js.org/blog/storybook-test/)
 
 ## Storybook
 
