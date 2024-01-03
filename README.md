@@ -52,6 +52,8 @@ npm run dev
 
 - [Build your own Storybook GPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
 
+-[@storybook-test: more streamlined and powerful testing](https://storybook.js.org/blog/storybook-test/)
+
 ## Storybook
 
 - Component を追加したとき､`/stories`配下に`*.stories.tsx`ファイルを作成し､`Story`` をつくる
