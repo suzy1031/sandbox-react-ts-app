@@ -54,16 +54,6 @@ npm run dev
 
 -[@storybook-test: more streamlined and powerful testing](https://storybook.js.org/blog/storybook-test/)
 
-## TypeDoc
-
-- refs:
-  - https://typedoc.org/
-
-```
-npm run doc
-// => output docs dir
-```
-
 ## Storybook
 
 - Component を追加したとき､`/stories`配下に`*.stories.tsx`ファイルを作成し､`Story`` をつくる
