@@ -24,3 +24,25 @@ decorators: [
   }),
 ],
 ```
+
+## test runner の動かし方
+
+ref: https://storybook.js.org/docs/writing-tests/test-runner
+
+---
+
+1. ドキュメントに沿って､必要なパッケージ群を install
+2. ドキュメントに沿って､各種ファイルの設定を追加
+3. `npm run sb:dev`で storybook を立ち上げておく
+4. 別タブでターミナルを立ち上げ､`npm run test-storybook`を実行
+5. `/coverage`ディレクトリに json ファイルが output される
+
+※ storybook を立ち上げていないと､`--coverage`オプションをつけるとエラーが発生する
+
+### error log
+
+```
+[Test runner] An error occurred when evaluating code coverage:
+      The code in this story is not instrumented, which means the coverage setup is likely not correct.
+      More info: https://github.com/storybookjs/test-runner#setting-up-code-coverage
+```
