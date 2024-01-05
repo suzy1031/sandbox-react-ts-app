@@ -6,11 +6,17 @@ on:
       - develop
     paths:
       - "src/**"
+      - "!src/**/stories/**"
+      - "!src/**/assets/**"
+      - "!src/**/constants/**"
   pull_request:
     branches:
       - develop
     paths:
       - "src/**"
+      - "!src/**/stories/**"
+      - "!src/**/assets/**"
+      - "!src/**/constants/**"
 
 permissions:
   pull-requests: write
