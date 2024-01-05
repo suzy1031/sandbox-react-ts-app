@@ -27,3 +27,6 @@ jobs:
       - run: npm run vitest:coverage
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.2.0
+        with:
+          json-summary-path: "./coverage/vitest/coverage-summary-backend.json"
+          json-final-path: "./coverage/vitest/coverage-final-backend.json"
