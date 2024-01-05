@@ -2,6 +2,8 @@ name: "CI | Function Tests"
 
 on:
   push:
+    paths:
+      - "src/**"
     branches: [develop]
   pull_request:
     branches: [develop]
