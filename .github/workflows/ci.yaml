@@ -1,4 +1,4 @@
-name: CI
+name: "CI | Function Tests"
 
 on:
   push:
@@ -24,6 +24,6 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run test:coverage
+      - run: npm run vitest:coverage
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.2.0
