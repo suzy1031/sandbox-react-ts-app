@@ -2,13 +2,13 @@ name: pr-agent
 
 on:
   pull_request:
-    branches: [develop]
+    branches:
+      - develop
+    paths:
+      - "src/**"
     types: [opened, reopened, synchronize]
   issue_comment:
     types: [created, edited]
-  push:
-    paths:
-      - "src/**"
 
 permissions:
   pull-requests: write

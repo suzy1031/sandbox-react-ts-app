@@ -2,9 +2,15 @@ name: "CI | Function Tests"
 
 on:
   push:
-    branches: [develop]
+    branches:
+      - develop
+    paths:
+      - "src/**"
   pull_request:
-    branches: [develop]
+    branches:
+      - develop
+    paths:
+      - "src/**"
 
 permissions:
   pull-requests: write
