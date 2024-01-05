@@ -10,18 +10,18 @@ const meta: Meta<typeof ChoiceModal> = {
   parameters: {
     docs: {
       description: {
-        component: "Choiceコンポーネントは...に使用されます", // ここにコンポーネントの説明を書く
+        component: "Choiceコンポーネントは...に使用されます",
       },
     },
   },
   argTypes: {
     open: {
-      description: "Choiceコンポーネントの表示を制御します", // ここに引数の説明を書く
-      control: "boolean", // ここに引数のコントロールタイプを書く
+      description: "Choiceコンポーネントの表示を制御します",
+      control: "boolean",
     },
     handleClose: {
-      description: "モーダルを閉じるための関数", // ここに引数の説明を書く
-      action: "closed", // ここに引数のコントロールタイプを書く
+      description: "モーダルを閉じるための関数",
+      action: "closed",
     },
   },
 };
