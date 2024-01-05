@@ -13,6 +13,7 @@ export default {
           'Tailwind variant button with primary, secondary, and disabled states along with size variations.',
       },
     },
+    layout: 'centered',
   },
   argsTypes: {
     color: {

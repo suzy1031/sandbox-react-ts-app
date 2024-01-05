@@ -14,6 +14,7 @@ export default {
           'HtmlButton is a customizable button component for user interactions. You can set its variant, color, click behavior, size, and shape. Customize it further with the `sx` prop for specific style overrides.',
       },
     },
+    layout: 'centered',
   },
   argTypes: {
     label: { description: 'The text that appears on the button.' },
