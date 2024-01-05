@@ -2,11 +2,15 @@ name: "CI | Storybook Interaction/assert Tests"
 
 on:
   push:
+    branches:
+      - develop
     paths:
       - "src/**"
-    branches: [develop]
   pull_request:
-    branches: [develop]
+    branches:
+      - develop
+    paths:
+      - "src/**"
 
 jobs:
   test:
