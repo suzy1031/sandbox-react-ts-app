@@ -34,7 +34,7 @@ export default {
 ```
 nvm use
 // => v20.10.0
-npm i --legacy-peer-deps
+npm i
 npm run dev
 ```
 
@@ -48,15 +48,11 @@ npm run dev
 
 - [テストフレームワークを Jest から Vitest に移管した手順と得た知見](https://qiita.com/itouoti/items/6f03065c68baf4245b2f)
 
-## TypeDoc
+- [Storybook 7 を Vue 3 + TypeScript ではじめよう！](https://zenn.dev/sa2knight/books/storybook-7-with-vue-3)
 
-- refs:
-  - https://typedoc.org/
+- [Build your own Storybook GPT](https://storybook.js.org/blog/build-your-own-storybook-gpt/)
 
-```
-npm run doc
-// => output docs dir
-```
+- [@storybook-test: more streamlined and powerful testing](https://storybook.js.org/blog/storybook-test/)
 
 ## Storybook
 
@@ -66,21 +62,34 @@ npm run doc
 npm run sb:dev
 ```
 
-## Snapshot test by @testing-library/react
+## Vitest(Function Tests)と Storybook(UI Tests)の migration
 
-- 意図しない変更･デグレを検知する
-- github actions で CI が失敗した場合､該当の\*.test.tsx ファイルで snapshot の差分を確認
-- 変更が意図した通りであれば､update する
-- `__snapshots__`配下の該当する`*.test.tsx.snap`が更新を確認後､commit する
+両方で output された coverage report ファイルをマージして､1 つのファイルにまとめるコマンド
+
+ref: [Next.js & Tailwind CSS & Storybook のフロントエンド環境の構築メモ](https://qiita.com/hiroaki-suzuki/items/a0196357a4bca7415727)
 
 ```
-npm run test
-// press u
+npm run test-merge-coverage
+npm run coverage-report
 ```
 
 ## Github Actions
 
-### packages
+`create-pr.yaml`
+
+- staging ブランチへのマージを検知して､main へ本番反映用の PR を作成する
+
+---
+
+`storybook-tests.yaml`
+
+- `*stories.tsx`の`play`を実行し､interaction test を実行する
+
+---
+
+`ci.yaml`
+
+- `*.test.ts|tsx`を実行し､coverage report を output する
 
 - davelosert/vitest-coverage-report-action@v2.2.0
 
@@ -88,6 +97,12 @@ npm run test
   - refs:
     - [【2022/9 時点】vitest のカバレッジを GitHub PR 上に連携する](https://magicode.io/Sumiren/articles/f0455cc2cc9a4dde88ab994807ecdd56)
     - [Vitest Coverage Report](https://github.com/marketplace/actions/vitest-coverage-report)
+
+---
+
+`pr-agent.yaml`
+
+- PR の内容を走査し､サマリ生成やコードの修正を提案する
 
 - PR-Agent
   - refs:

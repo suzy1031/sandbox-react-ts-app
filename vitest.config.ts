@@ -7,7 +7,7 @@ export default defineConfig({
     environment: "happy-dom",
     coverage: {
       reporter: ["text", "json-summary", "json"],
-      reportsDirectory: "./coverage",
+      reportsDirectory: "./coverage/vitest",
     },
     // これを有効にしないとexpect関数でエラーする
     // ReferenceError: expect is not defined

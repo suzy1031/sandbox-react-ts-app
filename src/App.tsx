@@ -1,11 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { Button } from "@mui/material";
-import useHandleModal from "./hooks/useHandleModal";
-import ChoiceModal from "./ui/ChoiceModal";
-import HtmlButton from "./ui/HtmlButton";
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import { Button } from '@mui/material';
+import useHandleModal from './hooks/useHandleModal';
+import ChoiceModal from './ui/ChoiceModal';
+import HtmlButton from './ui/HtmlButton';
+import Headline from './ui/Headline';
+import TwButton from './components/tailwindcss/TwButton';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +23,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <Headline title="Vite + React" variant="xl" />
       <div className="card">
         <button
           data-qa="count-up"
@@ -38,9 +40,18 @@ function App() {
           Mui Button Test
         </Button>
         <HtmlButton
+          color="mycolor2"
           label="jsdoc -> copilot生成"
           variant="outlined"
-          handleClick={() => console.log("click")}
+          handleClick={() => console.log('click')}
+        />
+        <br />
+        <div style={{ margin: '16px 0' }} />
+        <TwButton
+          label="tailwind Button"
+          color="primary"
+          size="large"
+          handleClick={() => window.alert('click tailwind Button')}
         />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
