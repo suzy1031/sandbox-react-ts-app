@@ -6,6 +6,9 @@ on:
     types: [opened, reopened, synchronize]
   issue_comment:
     types: [created, edited]
+  push:
+    paths:
+      - "src/**"
 
 permissions:
   pull-requests: write
