@@ -15,28 +15,21 @@ export default {
     },
     layout: 'centered',
   },
-  argsTypes: {
+  argTypes: {
     color: {
       description: '色のバリエーションを設定します。',
-      control: 'select',
-      options: ['primary', 'secondary'],
     },
     size: {
       description: 'ボタンのサイズを設定します。',
-      control: 'select',
-      options: ['small', 'base', 'large'],
     },
     disable: {
       description: 'ボタンを無効化するかどうか。',
-      control: 'boolean',
     },
     label: {
       description: 'ボタンのラベル。',
-      control: 'text',
     },
     handleClick: {
       description: 'クリック時のイベントハンドラ。',
-      action: 'handleClick',
     },
   },
 } as Meta;
