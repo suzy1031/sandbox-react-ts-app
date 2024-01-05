@@ -20,22 +20,18 @@ export default {
   argTypes: {
     title: {
       description: 'The text content of the headline.',
-      control: 'text',
     },
     variant: {
       description:
         'Defines the style of the headline according to the theme (e.g., xxl, xl, l, m...)',
-      control: 'select',
     },
     color: {
       description:
         'Sets the color of the headline. Accepts any valid color from the theme.',
-      control: 'color',
     },
     sx: {
       description:
         'Custom styles to apply to the headline. Accepts theme-based style object.',
-      control: 'object',
     },
   },
 } as Meta;
