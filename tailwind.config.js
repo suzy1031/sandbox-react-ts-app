@@ -1,3 +1,4 @@
+import daisyUI from 'daisyui';
 /** @type {import('tailwindcss').Config} */
 
 export default {
@@ -5,5 +6,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-tailwindcss', '@tailwindcss/typography', daisyUI],
 };
