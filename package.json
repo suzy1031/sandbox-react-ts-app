@@ -9,10 +9,12 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage",
+    "vitest:coverage": "vitest run --coverage",
     "sb:dev": "storybook dev -p 6006",
     "build-sb": "storybook build",
-    "test-storybook": "test-storybook --coverage"
+    "sb:coverage": "test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
+    "test-merge-coverage": "npx istanbul-merge --out coverage/merged/coverage.json ./coverage/vitest/coverage-final.json ./coverage/storybook/coverage-storybook.json",
+    "coverage-report": "npx nyc report --reporter=lcov -t coverage/merged --report-dir coverage/merged"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -22,6 +24,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.7",
     "@storybook/addon-coverage": "^1.0.0",
     "@storybook/addon-docs": "^7.6.7",
     "@storybook/addon-essentials": "^7.6.6",
