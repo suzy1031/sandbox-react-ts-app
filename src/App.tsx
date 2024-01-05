@@ -1,12 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { Button } from "@mui/material";
-import useHandleModal from "./hooks/useHandleModal";
-import ChoiceModal from "./ui/ChoiceModal";
-import HtmlButton from "./ui/HtmlButton";
-import Headline from "./ui/Headline";
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import { Button } from '@mui/material';
+import useHandleModal from './hooks/useHandleModal';
+import ChoiceModal from './ui/ChoiceModal';
+import HtmlButton from './ui/HtmlButton';
+import Headline from './ui/Headline';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +23,10 @@ function App() {
         </a>
       </div>
       <Headline title="Vite + React" variant="xl" />
+      <p className="bg-red-600 font-bold text-blue-300">Hello tailwind</p>
+      <button className="inline-block rounded bg-blue-600 px-6 py-2.5 text-xs font-medium leading-tight">
+        tailwind button
+      </button>
       <div className="card">
         <button
           data-qa="count-up"
@@ -42,7 +46,7 @@ function App() {
           color="mycolor2"
           label="jsdoc -> copilot生成"
           variant="outlined"
-          handleClick={() => console.log("click")}
+          handleClick={() => console.log('click')}
         />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
