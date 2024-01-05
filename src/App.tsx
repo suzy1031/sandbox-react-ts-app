@@ -7,6 +7,7 @@ import useHandleModal from './hooks/useHandleModal';
 import ChoiceModal from './ui/ChoiceModal';
 import HtmlButton from './ui/HtmlButton';
 import Headline from './ui/Headline';
+import TwButton from './components/tailwindcss/TwButton';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,10 +24,6 @@ function App() {
         </a>
       </div>
       <Headline title="Vite + React" variant="xl" />
-      <p className="bg-red-600 font-bold text-blue-300">Hello tailwind</p>
-      <button className="inline-block rounded bg-blue-600 px-6 py-2.5 text-xs font-medium leading-tight">
-        tailwind button
-      </button>
       <div className="card">
         <button
           data-qa="count-up"
@@ -47,6 +44,14 @@ function App() {
           label="jsdoc -> copilot生成"
           variant="outlined"
           handleClick={() => console.log('click')}
+        />
+        <br />
+        <div style={{ margin: '16px 0' }} />
+        <TwButton
+          label="tailwind Button"
+          color="primary"
+          size="large"
+          handleClick={() => window.alert('click tailwind Button')}
         />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
