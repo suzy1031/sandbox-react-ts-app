@@ -6,6 +6,10 @@ on:
       - develop
     paths:
       - "src/**"
+      - "!src/**/stories/**"
+      - "!src/**/tests/**"
+      - "!src/**/assets/**"
+      - "!src/**/constants/**"
     types: [opened, reopened, synchronize]
   issue_comment:
     types: [created, edited]
