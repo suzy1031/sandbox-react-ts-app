@@ -5,6 +5,7 @@ export const colors = {
   white: "#FFFFFF",
   yellow: "#FFFF00",
   purple: "#800080",
+  black: "#000000",
 };
 
 export type Color = keyof typeof colors;
