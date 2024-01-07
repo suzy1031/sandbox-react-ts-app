@@ -1,6 +1,5 @@
-import { useCallback, useState } from 'react';
+import { type ReactElement, useCallback, useState } from 'react';
 import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import { Button } from '@mui/material';
 import useHandleModal from './hooks/useHandleModal';
@@ -11,7 +10,7 @@ import TwButton from './components/tailwindcss/TwButton';
 import DsButton from './components/daisyui/DsButton';
 import DsModal from './components/daisyui/DsModal';
 
-function App() {
+const App = (): ReactElement => {
   const [count, setCount] = useState(0);
   const { open, handleOpen, handleClose } = useHandleModal();
 
@@ -29,9 +28,6 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -40,7 +36,9 @@ function App() {
       <div className="card">
         <button
           data-qa="count-up"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => {
+            setCount((count) => count + 1);
+          }}
         >
           count is {count}
         </button>
@@ -56,7 +54,9 @@ function App() {
           color="mycolor2"
           label="jsdoc -> copilot生成"
           variant="outlined"
-          handleClick={() => console.log('click')}
+          handleClick={() => {
+            console.log('click');
+          }}
         />
         <br />
         <div style={{ margin: '16px 0' }} />
@@ -64,7 +64,9 @@ function App() {
           label="tailwind Button"
           color="primary"
           size="large"
-          handleClick={() => window.alert('click tailwind Button')}
+          handleClick={() => {
+            window.alert('click tailwind Button');
+          }}
         />
         <br />
         <DsButton
@@ -83,6 +85,6 @@ function App() {
       <ChoiceModal open={open} handleClose={handleClose} />
     </>
   );
-}
+};
 
 export default App;
