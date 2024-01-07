@@ -1,7 +1,7 @@
-import { SxProps, Typography } from "@mui/material";
-import { FC, ReactElement } from "react";
-import { Color, colors } from "../constants/colors";
-import { Headline, headline } from "../constants/customFonts/headline";
+import { type SxProps, Typography } from '@mui/material';
+import { type FC, type ReactElement } from 'react';
+import { type Color, colors } from '../constants/colors';
+import { type Headline, headline } from '../constants/customFonts/headline';
 
 // TODO: rest
 
@@ -13,28 +13,29 @@ import { Headline, headline } from "../constants/customFonts/headline";
  * -> <h1>Hello World</h1>
  * ```
  */
-type Props = {
+interface Props {
   title: string;
   variant: Headline;
   color?: Color;
   sx?: SxProps;
-};
-const Headline: FC<Props> = ({
+}
+const AbiliHeadline: FC<Props> = ({
   title,
   variant,
   color = colors.secondary,
   sx = {},
 }): ReactElement => {
   const baseStyle = headline[variant];
+
   return (
     <Typography
       component={baseStyle.component}
       fontSize={baseStyle.fontSize}
       color={color}
-      sx={{ fontWeight: 700, lineHeight: "130%", ...sx }}
+      sx={{ fontWeight: 700, lineHeight: '130%', ...sx }}
     >
       {title}
     </Typography>
   );
 };
-export default Headline;
+export default AbiliHeadline;

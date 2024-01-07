@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import DsButton from './DsButton';
 
-type Props = {
+interface Props {
   open: boolean;
   modalClose: () => void;
-};
+}
 
 const DsModal: FC<Props> = ({ open, modalClose }) => {
   return (
