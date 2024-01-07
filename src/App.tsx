@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -17,13 +17,13 @@ function App() {
 
   const [dsOpen, setDsOpen] = useState(false);
 
-  const handleDsOpen = () => {
+  const handleDsOpen = useCallback((): void => {
     setDsOpen(true);
-  };
+  }, []);
 
-  const handleDsClose = () => {
+  const handleDsClose = useCallback((): void => {
     setDsOpen(false);
-  };
+  }, []);
 
   return (
     <>
