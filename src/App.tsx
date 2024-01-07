@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -8,10 +8,23 @@ import ChoiceModal from './ui/ChoiceModal';
 import HtmlButton from './ui/HtmlButton';
 import Headline from './ui/Headline';
 import TwButton from './components/tailwindcss/TwButton';
+import DsButton from './components/daisyui/DsButton';
+import DsModal from './components/daisyui/DsModal';
 
 function App() {
   const [count, setCount] = useState(0);
   const { open, handleOpen, handleClose } = useHandleModal();
+
+  // TODO: hookに切り出す
+  const [dsOpen, setDsOpen] = useState(false);
+
+  const handleDsOpen = useCallback((): void => {
+    setDsOpen(true);
+  }, []);
+
+  const handleDsClose = useCallback((): void => {
+    setDsOpen(false);
+  }, []);
 
   return (
     <>
@@ -53,6 +66,13 @@ function App() {
           size="large"
           handleClick={() => window.alert('click tailwind Button')}
         />
+        <br />
+        <DsButton
+          label="daisyui Button"
+          handleClick={handleDsOpen}
+          color="primary"
+        />
+        <DsModal open={dsOpen} modalClose={handleDsClose} />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

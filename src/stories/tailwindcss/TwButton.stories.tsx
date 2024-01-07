@@ -4,7 +4,7 @@ import { expect } from '@storybook/jest';
 import TwButton from '../../components/tailwindcss/TwButton';
 
 export default {
-  title: 'tailwind/TwButton',
+  title: 'components/tailwind/TwButton',
   component: TwButton,
   parameters: {
     docs: {
