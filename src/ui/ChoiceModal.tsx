@@ -6,13 +6,13 @@ import {
   DialogContentText,
   DialogTitle,
   Tooltip,
-} from "@mui/material";
-import { FC, ReactElement } from "react";
+} from '@mui/material';
+import { type FC, type ReactElement } from 'react';
 
-type Props = {
+interface Props {
   open: boolean;
   handleClose: () => void;
-};
+}
 
 const ChoiceModal: FC<Props> = ({ open, handleClose }): ReactElement => (
   <Dialog
