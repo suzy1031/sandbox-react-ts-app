@@ -15,6 +15,7 @@ function App() {
   const [count, setCount] = useState(0);
   const { open, handleOpen, handleClose } = useHandleModal();
 
+  // TODO: hookに切り出す
   const [dsOpen, setDsOpen] = useState(false);
 
   const handleDsOpen = useCallback((): void => {
