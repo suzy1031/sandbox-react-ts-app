@@ -1,7 +1,7 @@
-import PaletteColorOptions from "@mui/material/styles/createPalette";
+import type PaletteColorOptions from '@mui/material/styles/createPalette';
 
 // PaletteOptions を拡張して、カラーキーワードを追加
-declare module "@mui/material/styles/createPalette" {
+declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
     mycolor1?: PaletteColorOptions;
     mycolor2?: PaletteColorOptions;
@@ -9,7 +9,7 @@ declare module "@mui/material/styles/createPalette" {
 }
 
 // Button の color prop に追加
-declare module "@mui/material/Button" {
+declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     mycolor1: true;
     mycolor2: true;
