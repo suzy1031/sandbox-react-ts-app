@@ -32,7 +32,7 @@
     "@storybook/addon-a11y": "^7.6.7",
     "@storybook/addon-coverage": "^1.0.0",
     "@storybook/addon-docs": "^7.6.7",
-    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-interactions": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
     "@storybook/addon-onboarding": "^1.0.10",
