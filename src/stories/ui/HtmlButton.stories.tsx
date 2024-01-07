@@ -1,8 +1,7 @@
-import { expect } from '@storybook/jest';
-import { Meta, StoryObj } from '@storybook/react';
+import { expect, jest } from '@storybook/jest';
+import { type Meta, type StoryObj } from '@storybook/react';
 import HtmlButton from '../../ui/HtmlButton';
 import { within, userEvent } from '@storybook/testing-library';
-import { jest } from '@storybook/jest';
 
 export default {
   title: 'ui/HtmlButton',

@@ -1,3 +1,4 @@
+import { type ReactElement } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const button = tv({
@@ -38,7 +39,7 @@ interface ButtonProps extends ButtonVariants {
   handleClick: () => void;
 }
 
-const TwButton = (props: ButtonProps) => {
+const TwButton = (props: ButtonProps): ReactElement => {
   return (
     <>
       <button className={button(props)} onClick={props.handleClick}>

@@ -7,7 +7,7 @@
  * const zero = plus(5, -5);
  * ```
  */
-export const plus = (v1: number, v2: number) => {
+export const plus = (v1: number, v2: number): number => {
   return v1 + v2;
 };
 
@@ -19,7 +19,7 @@ export const plus = (v1: number, v2: number) => {
  * const zero = minus(5, 5);
  * ```
  */
-export const minus = (v1: number, v2: number) => {
+export const minus = (v1: number, v2: number): number => {
   return v1 - v2;
 };
 
@@ -44,7 +44,8 @@ export const multi = (a: number, b: number): number => {
  */
 export const divide = (a: number, b: number): number => {
   if (b === 0) {
-    throw new Error("Cannot divide by zero");
+    throw new Error('Cannot divide by zero');
   }
+
   return a / b;
 };

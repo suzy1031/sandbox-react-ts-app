@@ -1,4 +1,5 @@
-import { VariantProps, tv } from 'tailwind-variants';
+import { type ReactElement } from 'react';
+import { type VariantProps, tv } from 'tailwind-variants';
 
 const button = tv({
   base: 'btn rounded-full',
@@ -31,7 +32,7 @@ interface ButtonProps extends ButtonVariants {
   handleClick: () => void;
 }
 
-const DsButton = (props: ButtonProps) => {
+const DsButton = (props: ButtonProps): ReactElement => {
   return (
     <button type="button" className={button(props)} onClick={props.handleClick}>
       {props.label}

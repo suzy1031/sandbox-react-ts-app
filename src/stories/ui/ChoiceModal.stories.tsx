@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react';
 // import { within, userEvent, screen } from "@storybook/testing-library";
 // import { expect } from "@storybook/jest";
 import ChoiceModal from '../../ui/ChoiceModal';

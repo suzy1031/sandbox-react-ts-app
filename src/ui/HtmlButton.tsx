@@ -22,12 +22,12 @@
  */
 
 // ref: https://qiita.com/wakin/items/830bba81eb21efcda108
-import { Button, SxProps } from "@mui/material";
+import { Button, type SxProps } from '@mui/material';
 
 const HtmlButton: React.FC<{
   label: string;
-  variant?: "contained" | "outlined" | "text";
-  color?: "primary" | "secondary" | "error" | "mycolor1" | "mycolor2";
+  variant?: 'contained' | 'outlined' | 'text';
+  color?: 'primary' | 'secondary' | 'error' | 'mycolor1' | 'mycolor2';
   handleClick: () => void;
   dataQa?: string;
   height?: number;
@@ -35,10 +35,10 @@ const HtmlButton: React.FC<{
   sx?: SxProps;
 }> = ({
   label,
-  variant = "contained",
-  color = "primary",
+  variant = 'contained',
+  color = 'primary',
   handleClick,
-  dataQa = "",
+  dataQa = '',
   height = 48,
   isRounded = true,
   sx = {},
@@ -51,7 +51,7 @@ const HtmlButton: React.FC<{
       data-qa={dataQa}
       sx={{
         height,
-        borderRadius: isRounded ? "24px" : "4px",
+        borderRadius: isRounded ? '24px' : '4px',
         ...sx,
       }}
     >

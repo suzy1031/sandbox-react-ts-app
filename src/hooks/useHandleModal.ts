@@ -1,10 +1,10 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-type ReturnType = {
+interface ReturnType {
   open: boolean;
   handleOpen: () => void;
   handleClose: () => void;
-};
+}
 
 /**
  * モーダルの開閉を管理するカスタムフック
@@ -19,6 +19,7 @@ const useHandleModal = (): ReturnType => {
   const handleClose = useCallback((): void => {
     setOpen(false);
   }, []);
+
   return { open, handleOpen, handleClose };
 };
 export default useHandleModal;
