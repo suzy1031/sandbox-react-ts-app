@@ -1,4 +1,6 @@
 version: 2
+# refs: https://zenn.dev/yuki0920/articles/9af3a7581193bf
+#       https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates
 updates:
   # Enable version updates for npm
   - package-ecosystem: "npm"
