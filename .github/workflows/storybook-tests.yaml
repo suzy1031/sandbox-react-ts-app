@@ -1,4 +1,4 @@
-name: "CI | Storybook Interaction/assert Tests"
+name: "Run Storybook Tests"
 
 on:
   push:
