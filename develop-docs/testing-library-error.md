@@ -84,7 +84,3 @@ Error: Process completed with exit code 1.
 - - run: npm ci
 + - run: npm ci --legacy-peer-deps
 ```
-
-## test
-
-- test list
