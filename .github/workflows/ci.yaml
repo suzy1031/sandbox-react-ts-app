@@ -22,6 +22,10 @@ permissions:
   pull-requests: write
   contents: read
 
+env:
+  WORKING_DIR:: '.'
+  CACHE_NAME: node_modules_cache
+
 jobs:
   setup:
     runs-on: ubuntu-latest
