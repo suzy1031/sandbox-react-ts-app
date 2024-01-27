@@ -3,7 +3,12 @@ import { type FC, type ReactElement } from 'react';
 
 const CustomChip: FC = (): ReactElement => {
   return (
-    <Chip label="Chip Filled" color="primary" variant="outlined" size="small" />
+    <Chip
+      label="Chip Filled update"
+      color="primary"
+      variant="outlined"
+      size="small"
+    />
   );
 };
 export default CustomChip;
