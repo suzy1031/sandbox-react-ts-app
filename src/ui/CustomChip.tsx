@@ -5,7 +5,7 @@ const CustomChip: FC = (): ReactElement => {
   return (
     <Chip
       label="Chip Filled update"
-      color="primary"
+      color="secondary"
       variant="outlined"
       size="small"
     />
