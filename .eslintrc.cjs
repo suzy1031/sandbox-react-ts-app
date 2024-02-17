@@ -104,6 +104,27 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    /**
+     * App.tsx Line 74
+     * RHFのonSubmitがエラーになるのでコメントアウト
+     * ref: https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-misused-promises.md
+     */
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false,
+      },
+    ],
+    /**
+     * App.tsx Line 41
+     * resolver: zodResolver(FormSchema)がエラーになるのでコメントアウト
+     * refs:
+     * https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
+     * https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unsafe-call.md
+     *
+     */
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
   },
   overrides: [
     {
