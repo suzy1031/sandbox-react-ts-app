@@ -1,7 +1,7 @@
-import { type ReactElement, useCallback, useState } from 'react';
+import { type ReactElement, useCallback, useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import { Button } from '@mui/material';
+import { Button, Divider, Stack } from '@mui/material';
 import useHandleModal from './hooks/useHandleModal';
 import ChoiceModal from './ui/ChoiceModal';
 import HtmlButton from './ui/HtmlButton';
@@ -13,6 +13,9 @@ import TextForm from './ui/TextForm';
 import { useForm } from 'react-hook-form';
 import { FormSchema, type FormSchemaType } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import dayjs from 'dayjs';
+import MuiDatePicker from './ui/MuiDatePicker';
+// import { InputItem } from './ui/InputItem';
 
 const App = (): ReactElement => {
   const [count, setCount] = useState(0);
@@ -30,12 +33,16 @@ const App = (): ReactElement => {
   }, []);
 
   const {
+    watch,
     control,
     handleSubmit,
     formState: { errors, isValid },
+    setError,
   } = useForm<FormSchemaType>({
     defaultValues: {
       name: '',
+      startDate: dayjs(),
+      endDate: dayjs().add(7, 'day'),
     },
     mode: 'all',
     resolver: zodResolver(FormSchema),
@@ -45,6 +52,31 @@ const App = (): ReactElement => {
     console.log(data);
   };
 
+  const watchStartDate = watch('startDate');
+  const watchEndDate = watch('endDate');
+
+  /**
+   * refs:
+   * https://react-hook-form.com/docs/useform/seterror
+   * https://react-hook-form.com/docs/useform/register#registerRef
+   * https://github.com/t-shiratori/hello-zod
+   * RHFのregisterには､deps: string[]を渡すことで､他のフィールドの値を監視することができる
+   *
+   * ex)
+   * deps: ['startDate', 'endDate']
+   * -> step1: update startDate startDate > endDate -> validate startDate error
+   * -> step2: after update endDate startDate < endDate -> remove startDate error
+   *
+   * しかし､Controllerにはdepsがないため､startDateとendDateが相互に監視できない
+   * そこで､useEffectとwatchを使って監視する
+   */
+  useEffect(() => {
+    if (watchStartDate < watchEndDate) {
+      setError('startDate', {});
+      setError('endDate', {});
+    }
+  }, [setError, watchEndDate, watchStartDate]);
+
   return (
     <>
       <div>
@@ -52,8 +84,55 @@ const App = (): ReactElement => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <Headline title="Vite + React" variant="xl" />
+      <Headline title="Sample Form" variant="xl" />
       <div className="card">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <TextForm name="name" control={control} errors={errors} />
+          <br />
+          <Stack direction="row" spacing={2} sx={{ my: 2 }}>
+            <MuiDatePicker
+              name="startDate"
+              control={control}
+              label="開始日"
+              errorMessage={errors.startDate?.message}
+            />
+            <MuiDatePicker
+              name="endDate"
+              control={control}
+              label="終了日"
+              errorMessage={errors.endDate?.message}
+            />
+          </Stack>
+          {/* <InputItem
+            register={register}
+            label={'出品開始日'}
+            fieldName={'startDate'}
+            type={'date'}
+            deps={['startDate', 'endDate']}
+            errorMessage={errors.startDate?.message}
+          /> */}
+
+          {/* <InputItem
+            register={register}
+            label={'出品終了日'}
+            fieldName={'endDate'}
+            type={'date'}
+            deps={['startDate', 'endDate']}
+            errorMessage={errors.endDate?.message}
+          /> */}
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ my: 2 }}
+            fullWidth
+            disabled={!isValid}
+          >
+            送信
+          </Button>
+        </form>
+        <Divider sx={{ my: 3 }} />
+        <Headline title="Vite + React" variant="xl" />
         <button
           data-qa="count-up"
           onClick={() => {
@@ -71,21 +150,6 @@ const App = (): ReactElement => {
           Mui Button Test
         </Button>
         <br />
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <TextForm name="name" control={control} errors={errors} />
-          <br />
-          {/* TODO: calendarコンポーネント */}
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-            sx={{ my: 2 }}
-            fullWidth
-            disabled={!isValid}
-          >
-            送信
-          </Button>
-        </form>
         <HtmlButton
           color="mycolor2"
           label="jsdoc -> copilot生成"
