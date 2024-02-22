@@ -9,6 +9,10 @@ import Headline from './ui/Headline';
 import TwButton from './components/tailwindcss/TwButton';
 import DsButton from './components/daisyui/DsButton';
 import DsModal from './components/daisyui/DsModal';
+import TextForm from './ui/TextForm';
+import { useForm } from 'react-hook-form';
+import { FormSchema, type FormSchemaType } from './schema';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const App = (): ReactElement => {
   const [count, setCount] = useState(0);
@@ -24,6 +28,22 @@ const App = (): ReactElement => {
   const handleDsClose = useCallback((): void => {
     setDsOpen(false);
   }, []);
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<FormSchemaType>({
+    defaultValues: {
+      name: '',
+    },
+    mode: 'all',
+    resolver: zodResolver(FormSchema),
+  });
+
+  const onSubmit = (data: FormSchemaType): void => {
+    console.log(data);
+  };
 
   return (
     <>
@@ -50,6 +70,22 @@ const App = (): ReactElement => {
         >
           Mui Button Test
         </Button>
+        <br />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <TextForm name="name" control={control} errors={errors} />
+          <br />
+          {/* TODO: calendarコンポーネント */}
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ my: 2 }}
+            fullWidth
+            disabled={!isValid}
+          >
+            送信
+          </Button>
+        </form>
         <HtmlButton
           color="mycolor2"
           label="jsdoc -> copilot生成"
