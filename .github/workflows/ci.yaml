@@ -74,7 +74,7 @@ jobs:
       #     key: ${{ runner.os }}-${{ env.CACHE_NAME }}-${{ hashFiles('${{ env.WORKING_DIR }}/package-lock.json') }}
 
       - name: es-lint
-        run: npm run lint
+        run: npm ci && npm run lint
 
   test:
     runs-on: ubuntu-latest
@@ -96,7 +96,7 @@ jobs:
       #     key: ${{ runner.os }}-${{ env.CACHE_NAME }}-${{ hashFiles('${{ env.WORKING_DIR }}/package-lock.json') }}
 
       - name: vitest-coverage
-        run: npm run vitest:coverage
+        run: npm ci && npm run vitest:coverage
 
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.2.0
@@ -124,4 +124,4 @@ jobs:
       #     key: ${{ runner.os }}-${{ env.CACHE_NAME }}-${{ hashFiles('${{ env.WORKING_DIR }}/package-lock.json') }}
 
       - name: build
-        run: npm run build
+        run: npm ci && npm run build
