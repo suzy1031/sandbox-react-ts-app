@@ -8,32 +8,32 @@ const primaryColorRgb = 'rgb(68, 68, 68)';
 export default {
   title: 'ui/Headline',
   component: Headline,
-  parameters: {
-    docs: {
-      description: {
-        component:
-          "Headline is a wrapper around MUI's Typography for consistent heading styles across your application. Customize the size with `variant`, color with `color`, and additional styles with `sx` prop.",
-      },
-    },
-    layout: 'centered',
-  },
-  argTypes: {
-    title: {
-      description: 'The text content of the headline.',
-    },
-    variant: {
-      description:
-        'Defines the style of the headline according to the theme (e.g., xxl, xl, l, m...)',
-    },
-    color: {
-      description:
-        'Sets the color of the headline. Accepts any valid color from the theme.',
-    },
-    sx: {
-      description:
-        'Custom styles to apply to the headline. Accepts theme-based style object.',
-    },
-  },
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       component:
+  //         "Headline is a wrapper around MUI's Typography for consistent heading styles across your application. Customize the size with `variant`, color with `color`, and additional styles with `sx` prop.",
+  //     },
+  //   },
+  //   layout: 'centered',
+  // },
+  // argTypes: {
+  //   title: {
+  //     description: 'The text content of the headline.',
+  //   },
+  //   variant: {
+  //     description:
+  //       'Defines the style of the headline according to the theme (e.g., xxl, xl, l, m...)',
+  //   },
+  //   color: {
+  //     description:
+  //       'Sets the color of the headline. Accepts any valid color from the theme.',
+  //   },
+  //   sx: {
+  //     description:
+  //       'Custom styles to apply to the headline. Accepts theme-based style object.',
+  //   },
+  // },
 } as Meta;
 
 type Story = StoryObj<typeof Headline>;
@@ -50,14 +50,14 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     await expect(canvas.getByText('Your Title Here')).toBeInTheDocument();
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'The default Headline with secondary color and xxl variant.',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'The default Headline with secondary color and xxl variant.',
+  //     },
+  //   },
+  // },
 };
 
 export const CustomColor: Story = {
@@ -74,14 +74,14 @@ export const CustomColor: Story = {
     );
     await expect(headlineElement).toHaveStyle(`color: ${primaryColorRgb}`);
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'Headline with a secondary color.',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'Headline with a secondary color.',
+  //     },
+  //   },
+  // },
 };
 
 export const CustomStyle: Story = {
@@ -98,12 +98,12 @@ export const CustomStyle: Story = {
       'text-decoration: underline solid rgb(38, 178, 151)',
     );
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'Headline with custom styles passed via the `sx` prop.',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'Headline with custom styles passed via the `sx` prop.',
+  //     },
+  //   },
+  // },
 };

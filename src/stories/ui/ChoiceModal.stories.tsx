@@ -9,22 +9,22 @@ import HtmlButton from '../../ui/HtmlButton';
 const meta: Meta<typeof ChoiceModal> = {
   title: 'ui/ChoiceModal',
   component: ChoiceModal,
-  parameters: {
-    docs: {
-      description: {
-        component: 'Choiceコンポーネントは...に使用されます',
-      },
-    },
-    layout: 'centered',
-  },
-  argTypes: {
-    open: {
-      description: 'Choiceコンポーネントの表示を制御します',
-    },
-    handleClose: {
-      description: 'モーダルを閉じるための関数',
-    },
-  },
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       component: 'Choiceコンポーネントは...に使用されます',
+  //     },
+  //   },
+  //   layout: 'centered',
+  // },
+  // argTypes: {
+  //   open: {
+  //     description: 'Choiceコンポーネントの表示を制御します',
+  //   },
+  //   handleClose: {
+  //     description: 'モーダルを閉じるための関数',
+  //   },
+  // },
 };
 
 export default meta;
@@ -67,12 +67,12 @@ export const Primary: Story = {
   //   const agreeButton = await canvas.findByText("Agree");
   //   await userEvent.click(agreeButton);
   // },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'これはChoiceコンポーネントのプライマリバリエーションです', // ここにストーリーの説明を書く
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'これはChoiceコンポーネントのプライマリバリエーションです', // ここにストーリーの説明を書く
+  //     },
+  //   },
+  // },
 };

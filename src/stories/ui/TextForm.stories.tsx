@@ -8,21 +8,21 @@ import { delay } from '../utils';
 export default {
   title: 'UI/TextForm',
   component: TextForm,
-  argTypes: {
-    name: {
-      description: 'テキストフォームの名前',
-      control: 'text',
-    },
-    control: {
-      description: 'refs: https://react-hook-form.com/docs/useform/control',
-      control: 'object',
-    },
-    errors: {
-      description:
-        'refs: https://react-hook-form.com/docs/useformstate/errormessage',
-      control: 'object',
-    },
-  },
+  // argTypes: {
+  //   name: {
+  //     description: 'テキストフォームの名前',
+  //     control: 'text',
+  //   },
+  //   control: {
+  //     description: 'refs: https://react-hook-form.com/docs/useform/control',
+  //     control: 'object',
+  //   },
+  //   errors: {
+  //     description:
+  //       'refs: https://react-hook-form.com/docs/useformstate/errormessage',
+  //     control: 'object',
+  //   },
+  // },
 } as Meta;
 
 type Story = StoryObj<typeof TextForm>;
@@ -60,12 +60,12 @@ export const Default: Story = {
 
     //TODO: バリデーションのテストを追加する
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'デフォルトのTextFormコンポーネント',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'デフォルトのTextFormコンポーネント',
+  //     },
+  //   },
+  // },
 };

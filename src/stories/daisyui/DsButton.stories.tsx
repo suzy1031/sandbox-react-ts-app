@@ -6,37 +6,37 @@ import DsButton from '../../components/daisyui/DsButton';
 export default {
   title: 'components/daisyui/DsButton',
   component: DsButton,
-  parameters: {
-    docs: {
-      description: {
-        components:
-          'DsButtonコンポーネントは、色、サイズ、無効状態を変更できるボタンです。',
-      },
-    },
-    layout: 'centered',
-  },
-  argTypes: {
-    color: {
-      description: 'ボタンの色を設定します。',
-      control: 'select',
-    },
-    size: {
-      description: 'ボタンのサイズを設定します。',
-      control: 'select',
-    },
-    disable: {
-      description: 'ボタンを無効にするかどうかを設定します。',
-      control: 'boolean',
-    },
-    label: {
-      description: 'ボタンのラベルを設定します。',
-      control: 'text',
-    },
-    handleClick: {
-      description: 'ボタンがクリックされたときのハンドラーを設定します。',
-      action: 'clicked',
-    },
-  },
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       components:
+  //         'DsButtonコンポーネントは、色、サイズ、無効状態を変更できるボタンです。',
+  //     },
+  //   },
+  //   layout: 'centered',
+  // },
+  // argTypes: {
+  //   color: {
+  //     description: 'ボタンの色を設定します。',
+  //     control: 'select',
+  //   },
+  //   size: {
+  //     description: 'ボタンのサイズを設定します。',
+  //     control: 'select',
+  //   },
+  //   disable: {
+  //     description: 'ボタンを無効にするかどうかを設定します。',
+  //     control: 'boolean',
+  //   },
+  //   label: {
+  //     description: 'ボタンのラベルを設定します。',
+  //     control: 'text',
+  //   },
+  //   handleClick: {
+  //     description: 'ボタンがクリックされたときのハンドラーを設定します。',
+  //     action: 'clicked',
+  //   },
+  // },
 } as Meta;
 
 type Story = StoryObj<typeof DsButton>;
@@ -64,12 +64,12 @@ export const Primary: Story = {
     // Assert that handleClick has been called
     await expect(args.handleClick).toHaveBeenCalled();
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'Primaryという名前のDsButtonコンポーネントのStoryです。',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'Primaryという名前のDsButtonコンポーネントのStoryです。',
+  //     },
+  //   },
+  // },
 };
