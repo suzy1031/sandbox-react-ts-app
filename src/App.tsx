@@ -15,6 +15,8 @@ import { FormSchema, type FormSchemaType } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import dayjs from 'dayjs';
 import MuiDatePicker from './ui/MuiDatePicker';
+import MuiSelect from './ui/MuiSelect';
+import { checkAfter, checkBefore } from './utils/Time';
 // import { InputItem } from './ui/InputItem';
 
 const App = (): ReactElement => {
@@ -43,6 +45,8 @@ const App = (): ReactElement => {
       name: '',
       startDate: dayjs(),
       endDate: dayjs().add(7, 'day'),
+      startTime: 9,
+      endTime: 24,
     },
     mode: 'all',
     resolver: zodResolver(FormSchema),
@@ -54,6 +58,22 @@ const App = (): ReactElement => {
 
   const watchStartDate = watch('startDate');
   const watchEndDate = watch('endDate');
+  const watchStartTime = watch('startTime');
+  const watchEndTime = watch('endTime');
+  const isBefore = checkBefore(
+    watchStartDate,
+    watchEndDate,
+    watchStartTime,
+    watchEndTime,
+  );
+  const isAfter = checkAfter(
+    watchEndDate,
+    watchStartDate,
+    watchEndTime,
+    watchStartTime,
+  );
+  const startError = errors.startDate?.message ?? errors.startTime?.message;
+  const endError = errors.endDate?.message ?? errors.endTime?.message;
 
   /**
    * refs:
@@ -71,11 +91,21 @@ const App = (): ReactElement => {
    * そこで､useEffectとwatchを使って監視する
    */
   useEffect(() => {
-    if (watchStartDate < watchEndDate) {
+    const initError = (): void => {
       setError('startDate', {});
       setError('endDate', {});
+      setError('startTime', {});
+      setError('endTime', {});
+    };
+
+    if (watchStartDate < watchEndDate) {
+      initError();
     }
-  }, [setError, watchEndDate, watchStartDate]);
+
+    if (isBefore || isAfter) {
+      initError();
+    }
+  }, [isAfter, isBefore, setError, watchEndDate, watchStartDate]);
 
   return (
     <>
@@ -94,13 +124,26 @@ const App = (): ReactElement => {
               name="startDate"
               control={control}
               label="開始日"
-              errorMessage={errors.startDate?.message}
+              errorMessage={startError}
             />
+            <MuiSelect
+              name="startTime"
+              control={control}
+              label="開始時刻"
+              errorMessage={startError}
+            />
+
             <MuiDatePicker
               name="endDate"
               control={control}
               label="終了日"
-              errorMessage={errors.endDate?.message}
+              errorMessage={endError}
+            />
+            <MuiSelect
+              name="endTime"
+              control={control}
+              label="終了時刻"
+              errorMessage={endError}
             />
           </Stack>
           {/* <InputItem
