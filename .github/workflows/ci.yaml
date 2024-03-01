@@ -74,7 +74,7 @@ jobs:
       #     key: ${{ runner.os }}-${{ env.CACHE_NAME }}-${{ hashFiles('${{ env.WORKING_DIR }}/package-lock.json') }}
 
       - name: npm Install
-        run: npm ci
+        run: npm install
       - name: es-lint
         run: npm run lint
       - name: vitest-coverage
