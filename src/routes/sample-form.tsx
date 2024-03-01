@@ -5,7 +5,5 @@ import Form from '../components/react-hook-form/Form';
 export const sampleFormRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'sample-form',
-  component: function SampleFormComponent() {
-    return <Form />;
-  },
+  component: () => <Form />,
 });
