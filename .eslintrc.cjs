@@ -89,14 +89,15 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
-    'prefer-arrow/prefer-arrow-functions': [
-      'error',
-      {
-        disallowPrototype: true,
-        singleReturnOnly: false,
-        classPropertiesAllowed: false,
-      },
-    ],
+    'prefer-arrow/prefer-arrow-functions': 'off',
+    // 'prefer-arrow/prefer-arrow-functions': [
+    //   'error',
+    //   {
+    //     disallowPrototype: true,
+    //     singleReturnOnly: false,
+    //     classPropertiesAllowed: false,
+    //   },
+    // ],
     'react/function-component-definition': [
       'error',
       {
