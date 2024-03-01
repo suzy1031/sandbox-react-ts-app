@@ -10,6 +10,9 @@ import { postsRoute } from './routes/posts';
 import { postsIndexRoute } from './routes/posts.index';
 import { postRoute } from './routes/posts.@postId';
 import { sandboxRoute } from './routes/sandbox';
+import { sampleFormRoute } from './routes/sample-form';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import theme from './libs/theme';
 
 // ref1: https://reffect.co.jp/react/tanstack-router
 // ref2: https://tanstack.com/router/latest/docs/framework/react/examples/basic-file-based
@@ -17,6 +20,7 @@ const routeTree = rootRoute.addChildren([
   indexRoute,
   aboutRoute,
   postsRoute.addChildren([postsIndexRoute, postRoute]),
+  sampleFormRoute,
   sandboxRoute,
 ]);
 
@@ -30,6 +34,9 @@ declare module '@tanstack/react-router' {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 );
