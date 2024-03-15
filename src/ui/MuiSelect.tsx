@@ -6,6 +6,7 @@ import {
   type FieldValues,
   type Path,
 } from 'react-hook-form';
+import { splitAndJoin } from '../utils/stringUtil';
 
 interface Props<T extends FieldValues = FieldValues> {
   name: Path<T>;
@@ -20,13 +21,6 @@ const MuiSelect = <T extends FieldValues>({
   label,
   errorMessage,
 }: Props<T>): ReactElement => {
-  const splitAndJoin = (input: string): string => {
-    const splitString = input.split(/(?=[A-Z])/);
-    const lowerCaseString = splitString.map((word) => word.toLowerCase());
-
-    return lowerCaseString.join('-');
-  };
-
   const id = splitAndJoin(name);
 
   return (
