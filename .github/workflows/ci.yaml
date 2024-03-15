@@ -79,6 +79,11 @@ jobs:
         run: npm run lint
       - name: vitest-coverage
         run: npm run vitest:coverage
+      - name: vitest Coverage Report
+        uses: davelosert/vitest-coverage-report-action@v2.2.0
+        with:
+          json-summary-path: "./coverage/vitest/coverage-summary.json"
+          json-final-path: "./coverage/vitest/coverage-final.json"
       - name: build
         run: npm run build
 
