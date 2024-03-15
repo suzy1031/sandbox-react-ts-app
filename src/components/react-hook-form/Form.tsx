@@ -1,4 +1,4 @@
-import { useEffect, type ReactElement } from 'react';
+import { useEffect, type ReactElement, useState } from 'react';
 import Headline from '../../ui/Headline';
 import TextForm from '../../ui/TextForm';
 import { Button, Stack } from '@mui/material';
@@ -9,6 +9,8 @@ import { FormSchema, type FormSchemaType } from '../../schema';
 import dayjs from 'dayjs';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { checkAfter, checkBefore } from '../../utils/Time';
+import MuiRadio from '../../ui/MuiRadio';
+import MuiCheckbox from '../../ui/MuiCheckbox';
 
 const Form = (): ReactElement => {
   const {
@@ -17,6 +19,8 @@ const Form = (): ReactElement => {
     handleSubmit,
     formState: { errors, isValid },
     setError,
+    getValues,
+    setValue,
   } = useForm<FormSchemaType>({
     defaultValues: {
       name: '',
@@ -24,6 +28,8 @@ const Form = (): ReactElement => {
       endDate: dayjs().add(7, 'day'),
       startTime: 9,
       endTime: 24,
+      publishScope: '0',
+      publishScopeIds: [],
     },
     mode: 'all',
     resolver: zodResolver(FormSchema),
@@ -51,6 +57,11 @@ const Form = (): ReactElement => {
   );
   const startError = errors.startDate?.message ?? errors.startTime?.message;
   const endError = errors.endDate?.message ?? errors.endTime?.message;
+
+  const watchPublishScope = watch('publishScope');
+  const watchPublishScopeIds = watch('publishScopeIds');
+  const scopeError =
+    errors.publishScope?.message ?? errors.publishScopeIds?.message;
 
   /**
    * refs:
@@ -83,6 +94,37 @@ const Form = (): ReactElement => {
       initError();
     }
   }, [isAfter, isBefore, setError, watchEndDate, watchStartDate]);
+
+  useEffect(() => {
+    if (watchPublishScope !== '0' && watchPublishScopeIds.length > 0) {
+      setError('publishScope', {});
+      setError('publishScopeIds', {});
+    }
+  }, [setError, watchPublishScope, watchPublishScopeIds.length]);
+
+  const handleCheck = (checkedId: number): number[] => {
+    const { publishScopeIds: ids } = getValues();
+    const newIds = ids?.includes(checkedId)
+      ? ids?.filter((id) => id !== checkedId)
+      : [...(ids ?? []), checkedId];
+
+    return newIds;
+  };
+
+  const [idsFieldOpen, setIdsFieldOpen] = useState(false);
+  console.log(idsFieldOpen);
+
+  const handleCheckboxFiledOpen = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setValue('publishScopeIds', []);
+
+    if (event.target.value === '0') {
+      setIdsFieldOpen(false);
+    } else {
+      setIdsFieldOpen(true);
+    }
+  };
 
   return (
     <>
@@ -118,6 +160,19 @@ const Form = (): ReactElement => {
               errorMessage={endError}
             />
           </Stack>
+          <MuiRadio
+            name="publishScope"
+            control={control}
+            label="範囲"
+            handleCheckboxFiledOpen={handleCheckboxFiledOpen}
+          />
+          <MuiCheckbox
+            name="publishScopeIds"
+            control={control}
+            label="対象"
+            errorMessage={scopeError}
+            handleCheck={handleCheck}
+          />
           <Button
             variant="contained"
             color="primary"
