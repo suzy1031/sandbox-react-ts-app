@@ -12,6 +12,7 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'json-summary', 'json'],
       reportsDirectory: './coverage/vitest',
+      // カバレッジレポートに表示しないファイルを指定
       exclude: [
         'postcss.config.js',
         'tailwind.config.js',
