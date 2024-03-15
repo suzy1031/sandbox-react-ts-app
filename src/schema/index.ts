@@ -33,6 +33,8 @@ export const FormSchema = z
     }),
     startTime: z.number().int().min(1).max(24),
     endTime: z.number().int().min(1).max(24),
+    publishScope: z.string().min(1).max(1),
+    publishScopeIds: z.array(z.number()),
   })
   .refine(
     (args) => {
@@ -82,6 +84,34 @@ export const FormSchema = z
     {
       message: MESSAGE.PAST_DATE,
       path: ['startTime'],
+    },
+  )
+  .refine(
+    (args) => {
+      const { publishScope, publishScopeIds } = args;
+      if (publishScope !== '0') {
+        return publishScopeIds.length > 0;
+      }
+
+      return true;
+    },
+    {
+      message: '選択してください',
+      path: ['publishScope'],
+    },
+  )
+  .refine(
+    (args) => {
+      const { publishScope, publishScopeIds } = args;
+      if (publishScope !== '0') {
+        return publishScopeIds.length > 0;
+      }
+
+      return true;
+    },
+    {
+      message: '選択してください',
+      path: ['publishScopeIds'],
     },
   );
 
