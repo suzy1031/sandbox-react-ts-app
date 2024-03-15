@@ -17,7 +17,7 @@ export const rootRoute = createRootRoute({
         <Link to="/sample-form" className="[&.active]:font-bold">
           sample-form
         </Link>
-        <Link to="sandbox" className="[&.active]:font-bold">
+        <Link to="/sandbox" className="[&.active]:font-bold">
           Sandbox
         </Link>
       </div>
