@@ -12,3 +12,4 @@ public/
 .*lintrc.js
 **/stories/
 **/tests/
+**/*.gen.ts

@@ -12,7 +12,23 @@ export default defineConfig({
     coverage: {
       reporter: ['text', 'json-summary', 'json'],
       reportsDirectory: './coverage/vitest',
-      all: false, // これをtrueにすると全てのファイルがカバレッジレポートに表示される
+      // カバレッジレポートに表示しないファイルを指定
+      exclude: [
+        'postcss.config.js',
+        'tailwind.config.js',
+        '.eslintrc.cjs',
+        '.storybook/',
+        'src/stories/',
+        'src/App.tsx',
+        'src/main.tsx',
+        'src/routeTree.gen.ts',
+        'src/components/',
+        'src/constants/',
+        'src/libs',
+        'src/routes/',
+        'src/ui/',
+      ],
+      // all: true, // これをtrueにすると全てのファイルがカバレッジレポートに表示される
     },
     // これを有効にしないとexpect関数でエラーする
     // ReferenceError: expect is not defined
