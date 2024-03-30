@@ -1,5 +1,6 @@
 services:
   app:
+    container_name: react-front-app
     build:
       context: .
     ports:
