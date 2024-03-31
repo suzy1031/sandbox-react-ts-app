@@ -3,9 +3,6 @@ import { defineConfig } from 'vite';
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
 
 export default defineConfig({
-  server: {
-    host: true,
-  },
   test: {
     include: ['src/**/*.test.{js,ts,jsx,tsx}'],
     environment: 'happy-dom',
