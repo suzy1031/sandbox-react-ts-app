@@ -95,7 +95,7 @@ export const CustomStyle: Story = {
     const canvas = within(canvasElement);
     const headlineElement = await canvas.getByText('Underlined Headline');
     await expect(headlineElement).toHaveStyle(
-      'text-decoration: underline solid rgb(38, 178, 151)',
+      'text-decoration: underline solid #1976d2',
     );
   },
   // tags: ['autodocs'],
