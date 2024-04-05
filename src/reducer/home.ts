@@ -2,7 +2,7 @@ import { data } from '../dummy/data';
 import { type ComplexState } from '../types/state';
 import { handleCheck } from '../utils/array';
 
-type Action =
+export type Action =
   | { type: 'setSelect'; payload: string }
   | { type: 'cancel' }
   | { type: 'setCheck'; payload: number }
