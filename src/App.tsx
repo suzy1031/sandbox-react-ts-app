@@ -1,7 +1,5 @@
 import { type ReactElement, useCallback, useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
-import { Button, Divider } from '@mui/material';
+import { Button } from '@mui/material';
 import useHandleModal from './hooks/useHandleModal';
 import ChoiceModal from './ui/ChoiceModal';
 import HtmlButton from './ui/HtmlButton';
@@ -27,63 +25,49 @@ const App = (): ReactElement => {
 
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <div className="card">
-        <Divider sx={{ my: 3 }} />
-        <Headline title="Vite + React" variant="xl" />
-        <button
-          data-qa="count-up"
-          onClick={() => {
-            setCount((count) => count + 1);
-          }}
-        >
-          count is {count}
-        </button>
-        <Button
-          data-qa="open-modal-button"
-          variant="contained"
-          sx={{ mx: 2 }}
-          onClick={handleOpen}
-        >
-          Mui Button Test
-        </Button>
-        <br />
-        <HtmlButton
-          color="mycolor2"
-          label="jsdoc -> copilot生成"
-          variant="outlined"
-          handleClick={() => {
-            console.log('click');
-          }}
-        />
-        <br />
-        <div style={{ margin: '16px 0' }} />
-        <TwButton
-          label="tailwind Button"
-          color="primary"
-          size="large"
-          handleClick={() => {
-            window.alert('click tailwind Button');
-          }}
-        />
-        <br />
-        <DsButton
-          label="daisyui Button"
-          handleClick={handleDsOpen}
-          color="primary"
-        />
-        <DsModal open={dsOpen} modalClose={handleDsClose} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Headline title="Vite + React" variant="xl" />
+      <button
+        data-qa="count-up"
+        onClick={() => {
+          setCount((count) => count + 1);
+        }}
+      >
+        count is {count}
+      </button>
+      <Button
+        data-qa="open-modal-button"
+        variant="contained"
+        sx={{ mx: 2 }}
+        onClick={handleOpen}
+      >
+        Mui Button Test
+      </Button>
+      <br />
+      <HtmlButton
+        color="mycolor2"
+        label="jsdoc -> copilot生成"
+        variant="outlined"
+        handleClick={() => {
+          console.log('click');
+        }}
+      />
+      <br />
+      <div style={{ margin: '16px 0' }} />
+      <TwButton
+        label="tailwind Button"
+        color="primary"
+        size="large"
+        handleClick={() => {
+          window.alert('click tailwind Button');
+        }}
+      />
+      <br />
+      <DsButton
+        label="daisyui Button"
+        handleClick={handleDsOpen}
+        color="primary"
+      />
+      <DsModal open={dsOpen} modalClose={handleDsClose} />
       <ChoiceModal open={open} handleClose={handleClose} />
     </>
   );
