@@ -13,6 +13,7 @@ import { sandboxRoute } from './routes/sandbox';
 import { sampleFormRoute } from './routes/sample-form';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './libs/theme';
+import { complexStateRoute } from './routes/complex-state';
 
 // ref1: https://reffect.co.jp/react/tanstack-router
 // ref2: https://tanstack.com/router/latest/docs/framework/react/examples/basic-file-based
@@ -22,6 +23,7 @@ const routeTree = rootRoute.addChildren([
   postsRoute.addChildren([postsIndexRoute, postRoute]),
   sampleFormRoute,
   sandboxRoute,
+  complexStateRoute,
 ]);
 
 const router = createRouter({ routeTree });
