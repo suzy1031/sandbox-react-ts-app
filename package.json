@@ -38,7 +38,6 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-coverage": "^1.0.1",
-    "@storybook/addon-docs": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
