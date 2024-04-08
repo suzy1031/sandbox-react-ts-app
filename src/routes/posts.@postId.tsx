@@ -1,7 +1,9 @@
-import { createRoute } from '@tanstack/react-router';
+import { Link, createRoute } from '@tanstack/react-router';
 import { postsRoute } from './posts';
 import { type Post } from './posts.index';
 import useTanstackPost from '../hooks/useTanstackPost';
+import { Box, Stack, Typography } from '@mui/material';
+import PostNavigator from '../components';
 
 const fetchPost = async (postId: string): Promise<Post> => {
   const res = await fetch(
@@ -19,16 +21,35 @@ export const postRoute = createRoute({
   component: function PostComponent() {
     const post = postRoute.useLoaderData();
 
-    const { id, title, body } = useTanstackPost(post);
+    const { id, nextId, prevId, title, body } = useTanstackPost(post);
 
     return (
       <>
-        <h2 style={{ fontSize: '18px', fontWeight: 700 }}>Single Post</h2>
-        <div>
-          <p>{id}</p>
+        <PostNavigator prev={prevId} next={nextId} />
+        <Box display="flex" justifyContent="center">
+          <h2 style={{ fontSize: '18px', fontWeight: 700 }}>Single Post</h2>
+        </Box>
+        <div style={{ margin: '16px' }}>
+          <p>ID: {id}</p>
           <p>{title}</p>
           <p>{body}</p>
         </div>
+        <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
+          {prevId >= 1 && (
+            <Link to="/posts/$postId" params={{ postId: prevId.toString() }}>
+              <Typography color="primary" fontWeight={700}>
+                前へ
+              </Typography>
+            </Link>
+          )}
+          {nextId <= 100 && (
+            <Link to="/posts/$postId" params={{ postId: nextId.toString() }}>
+              <Typography color="primary" fontWeight={700}>
+                次へ
+              </Typography>
+            </Link>
+          )}
+        </Stack>
       </>
     );
   },

@@ -1,5 +1,6 @@
 import { Link, createRoute } from '@tanstack/react-router';
 import { postsRoute } from './posts';
+import { Box } from '@mui/material';
 
 export interface Post {
   id: string;
@@ -22,20 +23,23 @@ export const postsIndexRoute = createRoute({
     const posts = postsIndexRoute.useLoaderData();
 
     return (
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link
-              to="/posts/$postId"
-              params={{
-                postId: post.id,
-              }}
-            >
-              {post.id}:{post.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Box m={4}>
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link
+                to="/posts/$postId"
+                params={{
+                  postId: post.id,
+                }}
+                style={{ textDecoration: 'underline' }}
+              >
+                {post.id}:{post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Box>
     );
   },
 });
