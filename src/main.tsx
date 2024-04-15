@@ -13,6 +13,7 @@ import { sampleFormRoute } from './routes/sample-form';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './libs/theme';
 import { complexStateRoute } from './routes/complex-state';
+import { useContextRoute } from './routes/use-context';
 
 // ref1: https://reffect.co.jp/react/tanstack-router
 // ref2: https://tanstack.com/router/latest/docs/framework/react/examples/basic-file-based
@@ -23,6 +24,7 @@ const routeTree = rootRoute.addChildren([
   sampleFormRoute,
   sandboxRoute,
   complexStateRoute,
+  useContextRoute,
 ]);
 
 const router = createRouter({ routeTree });
