@@ -72,6 +72,10 @@ const path = [
     path: '/complex-state',
     name: 'Complex State',
   },
+  {
+    path: '/use-context',
+    name: 'Use Context',
+  },
 ];
 
 export const rootRoute = createRootRoute({
