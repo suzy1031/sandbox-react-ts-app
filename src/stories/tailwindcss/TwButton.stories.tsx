@@ -48,14 +48,14 @@ export const Primary: Story = {
     await userEvent.click(button);
     await expect(button).toHaveClass('bg-blue-500');
   },
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        story: 'プライマリボタンのバリエーションを表示します。',
-      },
-    },
-  },
+  // tags: ['autodocs'],
+  // parameters: {
+  //   docs: {
+  //     description: {
+  //       story: 'プライマリボタンのバリエーションを表示します。',
+  //     },
+  //   },
+  // },
 };
 
 // Add additional stories for secondary, large, small, etc., following the same pattern.

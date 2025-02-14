@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: react-front-app
+    build:
+      context: .
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: sh -c "npm run dev -- --host"
+
+volumes:
+  node_modules:

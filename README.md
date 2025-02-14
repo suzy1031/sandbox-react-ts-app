@@ -86,3 +86,9 @@ npm run coverage-report
   - refs:
     - [github](https://github.com/Codium-ai/pr-agent)
     - [PR-Agent を使って Pull Request を AI レビューしてみた。（日本語対応もしてみた）](https://tech.layerx.co.jp/entry/2023/09/01/102612)
+
+---
+
+`actions/cache@v4`
+
+- ref: [【Next.js】Github Actionsのneedsを活用してテストを並列化させてみた | Offers Tech Blog](https://zenn.dev/overflow_offers/articles/975a421cfad4fc)
