@@ -50,7 +50,7 @@
     "@storybook/react": "^7.6.20",
     "@storybook/react-vite": "^7.6.20",
     "@storybook/test": "^7.6.20",
-    "@storybook/test-runner": "^0.21.0",
+    "@storybook/test-runner": "^0.22.0",
     "@storybook/testing-library": "^0.2.2",
     "@tanstack/router-devtools": "^1.105.0",
     "@tanstack/router-vite-plugin": "^1.105.0",
