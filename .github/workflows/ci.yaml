@@ -3,7 +3,7 @@ name: "Run Lint, Tests, and Build"
 on:
   push:
     branches:
-      - develop
+      - main
     paths:
       - '.github/**'
       - "src/**"
@@ -12,7 +12,7 @@ on:
       - "!src/**/constants/**"
   pull_request:
     branches:
-      - develop
+      - main
     paths:
       - '.github/**'
       - "src/**"
